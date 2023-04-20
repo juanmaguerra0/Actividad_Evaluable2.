@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="fxml.Controller">
+  <children>
+    <!-- Un VBox centrado que contiene todos los elementos del formulario -->
+    <VBox fx:id="vbox" layoutX="190.0" layoutY="73.0" prefHeight="250.0" prefWidth="300.0" spacing="10.0" style="-fx-padding: 10; -fx-border-style: solid inside; -fx-border-width: 2; -fx-border-insets: 5; -fx-border-radius: 5; -fx-border-color: #1E90FF;">
+      <children>
+        <!-- Etiqueta solicitando la entrada del usuario -->
+        <Label fx:id="inputLbl" alignment="CENTER_LEFT" cache="true" cacheHint="SCALE" prefHeight="29.0" prefWidth="206.0" text="Please insert Your Input here:" textAlignment="LEFT" />
+        <!-- Campo de texto para la entrada del usuario -->
+        <TextField fx:id="inputText" prefWidth="167.0" />
+        <!-- Botón que ejecuta la función printOutput() para mostrar la entrada en la TextArea -->
+        <Button fx:id="okBtn" alignment="CENTER_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#printOutput" style="-fx-background-color: #1E90FF; -fx-text-fill: white; -fx-font-weight: bold;" text="OK" textAlignment="CENTER" />
+        <!-- Etiqueta para mostrar el texto ingresado por el usuario -->
+        <Label fx:id="outputLbl" text="Your Input:" />
+        <!-- TextArea para mostrar la entrada del usuario -->
+        <TextArea fx:id="outputText" prefHeight="93.0" prefWidth="221.0" wrapText="true" />
+        <!-- Script que contiene la función printOutput() -->
+        <fx:script><![CDATA[
+            function printOutput() 
+            {
+                outputText.setText(inputText.getText());
+            }
+        ]]></fx:script>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>
